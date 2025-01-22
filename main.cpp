@@ -17,13 +17,13 @@ void PrintArray(int arr[])
     }
 
 }
-int FindMin(int arr[], const int start)
+int FindMax(int arr[], const int last)
 {
-    int index = start;
-    int min = arr[start];
-    for (int i = start + 1; i < N; i++)
-        if (arr[i] < min) {
-            min = arr[i];
+    int index = last;
+    int max = arr[last];
+    for (int i = 0; i < last-1; i++)
+        if (arr[i] > max) {
+            max = arr[i];
             index = i;
         }
     return index;
@@ -42,8 +42,8 @@ int main() {
     }
     PrintArray(arr);
     auto start = high_resolution_clock::now();
-    for(int i = 0; i < N-1;i++) {
-        int j = FindMin(arr, i);
+    for(int i = N-1 ; i > 0; i--) {
+        int j = FindMax(arr, i);
         swap(arr[i], arr[j]);
 
     }
