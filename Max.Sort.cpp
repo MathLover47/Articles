@@ -21,7 +21,7 @@ int FindMax(int arr[], const int last)
 {
     int index = last;
     int max = arr[last];
-    for (int i = 0; i < last-1; i++)
+    for (int i = 0; i < last; i++)
         if (arr[i] > max) {
             max = arr[i];
             index = i;
